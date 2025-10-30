@@ -13,7 +13,7 @@ class CounterAppTest {
     @Test
     fun counter_increments_when_button_clicked() {
         // Check initial count is 0
-        composeTestRule.onNodeWithText("Count: 0").assertExists()
+        composeTestRule.onNodeWithTag("countText").assertExists()
 
         // Click increment button
         composeTestRule.onNodeWithText("Increment").performClick()

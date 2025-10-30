@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.counterapp.ui.theme.CounterAppTheme
@@ -45,7 +46,11 @@ fun CounterApp() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ){
-            Text(text = "Count: $count", style = MaterialTheme.typography.headlineMedium)
+            Text(
+                text = "Count: $count",
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.testTag("countText")
+            )
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = { count++ }) {
                 Text("Increment")
